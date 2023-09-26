@@ -1,0 +1,1 @@
+<img src="{{asset('images/404.png')}}" alt="Error 404">

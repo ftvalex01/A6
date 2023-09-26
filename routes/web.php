@@ -51,3 +51,18 @@ Route::get('/timezone', function () {
     return config('app.timezone');
 });
 
+
+// ejercicio 3
+Route::view('/inicio', 'home');
+
+Route::view('/fecha','fecha',['dia' =>date('d'),'mes'=>date('m'),'año'=>date('y')]);
+
+$fechas = ['dia' =>date('d'),'mes'=>date('m'),'año'=>date('y')];
+Route::view('/fechaCompact','fecha',compact('fechas'));
+
+Route::get('/fechaWith',function(){
+    return view('fecha')
+            ->with('dia', date('d'))
+            ->with('mes', date('m'))
+            ->with('año', date('y'));
+});
